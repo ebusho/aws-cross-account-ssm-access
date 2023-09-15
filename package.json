@@ -1,0 +1,16 @@
+{
+  "name": "aws-cross-account-access",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "keywords": [],
+  "author": "Alis Adrovic",
+  "license": "ISC",
+  "dependencies": {
+    "@aws-sdk/client-ssm": "^3.410.0",
+    "@aws-sdk/credential-providers": "^3.410.0"
+  }
+}
