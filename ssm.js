@@ -4,7 +4,7 @@ const { SSMClient, GetParameterCommand } = require("@aws-sdk/client-ssm");
 async function getSSMData() {
   try {
     const region = process.env.AWS_REGION;
-    const roleArn = process.env.AWS_ROLE_ARN;
+    const roleArn = process.env.AWS_ROLE_ARN_EXTERNAL;
     const roleSessionName = process.env.AWS_ROLE_SESSION_NAME;
     const parameterStoreName = process.env.AWS_PARAMETER_STORE_NAME;
 
@@ -34,6 +34,8 @@ async function getSSMData() {
 
     return JSON.parse(response.Parameter.Value)
   } catch (err) {
+    console.error(err);
+
     throw new Error(err.message)
   }
 }
